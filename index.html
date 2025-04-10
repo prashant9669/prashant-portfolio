@@ -127,12 +127,19 @@
                 </header>
 
                 <section class="about-text">
-                    <p>I am a passionate and creative Frontend Developer with over 1 year and 5 months of experience in
-                        building responsive, user-friendly web applications. I specialize in crafting clean and
-                        functional interfaces using HTML, CSS, Bootstrap, JavaScript, Tailwind, React, and MUI.</p>
-                    <p> I have a strong eye for detail, a drive to continuously learn new technologies, and the ability
-                        to work effectively within cross-functional teams. My goal is to create impactful digital
-                        experiences that align with the vision and goals of clients and stakeholders.</p>
+                    <p> I am a passionate and creative Frontend Developer with over 1 year and 5 months of experience
+                        building responsive, user-friendly web applications. I specialize in crafting clean, functional
+                        interfaces using HTML, CSS, Bootstrap, JavaScript, Tailwind, React, and MUI, with a strong eye
+                        for detail and a commitment to delivering high-quality results.</p>
+
+                    <p>My hands-on experience includes contributing to 98+ projects (both collaborative and individual) and
+                    leading the development of 30+ projects from concept to deployment. I thrive in cross-functional
+                    teams, ensuring seamless collaboration between designers, backend developers, and stakeholders to
+                    create impactful digital experiences.</p>
+
+                   <p> Driven by a growth mindset, I continuously explore emerging technologies to enhance user engagement
+                    and performance. My goal is to transform ideas into intuitive, visually appealing, and scalable
+                    solutions that align with client objectives and elevate user experiences.</p>
                 </section>
 
                 <!-- SERVICES SECTION -->
@@ -1143,18 +1150,18 @@
                     <form id="contact-form" class="form">
                         <!-- Hidden Fields Required for FormSubmit -->
                         <input type="hidden" name="_captcha" value="false">
-                        
+
                         <div class="input-wrapper">
-                          <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
-                          <input type="email" name="email" class="form-input" placeholder="Email Address" required>
+                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required>
+                            <input type="email" name="email" class="form-input" placeholder="Email Address" required>
                         </div>
-                    
+
                         <textarea name="message" class="form-input" placeholder="Your Message" required></textarea>
-                    
+
                         <button class="form-btn" type="submit">
-                          <span>Send Message</span>
+                            <span>Send Message</span>
                         </button>
-                      </form>
+                    </form>
 
                     <!-- ✅ Popup -->
                     <div id="popup"
@@ -1178,27 +1185,27 @@
     <script>
         const form = document.getElementById('contact-form');
         const popup = document.getElementById('popup');
-    
+
         form.addEventListener('submit', function (e) {
-          e.preventDefault(); // Prevent default redirect
-    
-          const formData = new FormData(form);
-    
-          fetch("https://formsubmit.co/soniprashant9669@gmail.com", {
-            method: "POST",
-            body: formData
-          })
-          .then(response => {
-            if (response.ok) {
-              popup.style.display = "block"; // Show popup
-              form.reset(); // Clear form
-            } else {
-              alert("Form submission failed. Please try again.");
-            }
-          })
-          .catch(error => alert("Error: " + error));
+            e.preventDefault(); // Prevent default redirect
+
+            const formData = new FormData(form);
+
+            fetch("https://formsubmit.co/soniprashant9669@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => {
+                    if (response.ok) {
+                        popup.style.display = "block"; // Show popup
+                        form.reset(); // Clear form
+                    } else {
+                        alert("Form submission failed. Please try again.");
+                    }
+                })
+                .catch(error => alert("Error: " + error));
         });
-      </script>
+    </script>
 </body>
 
 </html>
