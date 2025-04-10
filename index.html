@@ -1114,22 +1114,26 @@
                 <section class="contact-form">
                     <h3 class="h3 form-title">Contact Form</h3>
 
-                    <form action="https://formsubmit.co/soniprashant9669@gmail.com" class="form" data-form method="post">
+                    <form id="contact-form" class="form" data-form>
                         <div class="input-wrapper">
-                            <input type="text" name="fullname" class="form-input" placeholder="Full name" required
-                                data-form-input>
-                            <input type="email" name="email" class="form-input" placeholder="Email Address" required
-                                data-form-input>
+                          <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+                          <input type="email" name="email" class="form-input" placeholder="Email Address" required data-form-input>
                         </div>
-
-                        <textarea name="message" class="form-input" placeholder="Your Message" required
-                            data-form-input></textarea>
-
-                        <button class="form-btn" type="submit" disabled data-form-btn>
-                            <ion-icon name="paper-plane"></ion-icon>
-                            <span>Send Message</span>
+                      
+                        <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+                      
+                        <button class="form-btn" type="submit" data-form-btn>
+                          <ion-icon name="paper-plane"></ion-icon>
+                          <span>Send Message</span>
                         </button>
-                    </form>
+                      </form>
+                      
+                      <!-- ✅ Popup -->
+                      <div id="popup" style="display:none; padding: 20px; background:#d4edda; color:#155724; border:1px solid #c3e6cb;">
+                        ✅ Message sent successfully!
+                      </div>
+                      
+
                 </section>
             </article>
         </div>
@@ -1142,6 +1146,30 @@
     <script src="./Javascript/script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script>
+        const form = document.getElementById('contact-form');
+  const popup = document.getElementById('popup');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default redirect
+
+    const formData = new FormData(form);
+
+    fetch("https://formsubmit.co/soniprashant9669@gmail.com", {
+      method: "POST",
+      body: formData
+    })
+    .then(response => {
+      if (response.ok) {
+        popup.style.display = "block"; // Show popup
+        form.reset(); // Clear form
+      } else {
+        alert("Something went wrong. Please try again.");
+      }
+    })
+    .catch(error => alert("Error: " + error));
+  });
+    </script>
 </body>
 
 </html>
